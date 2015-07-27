@@ -5,25 +5,54 @@
 <br />
 <br />
 <select id="dropdown">
+    <option>-- Select --</option>
 </select>
-<input type="text" id="City" />
-<textarea cols="15" rows="5" id="about" placeholder="">
+<input type="text" value="" id="City" />
+<textarea cols="15" rows="5" id="about" placeholder="About">
 
 </textarea>
+<button id="add">Save</button>
 <script>
     $(document).ready(function() {
         $.get("/Student/DropDown/", function (data) {
+            console.log(JSON.stringify(data))
+
             $.each(data, function (index, item) {
+                console.log(item.About)
                 if (index == 0) {
-                    $("#City").val(item.Name);
+                    $("#City").val('');
                 }
-                $("#dropdown").append("<option>"+ item.Name +"</option>");
+                $("#dropdown").append("<option id="+ item.Id +" name="+ item.City +">"+ item.Name +"</option>");
             })
         });
-        $("#dropdown").change(function () {
-            var option = this.value;
+        var option;
+        var sid;
+        var city;
+        $("#dropdown").change(function (event) {
+            option = this.value;
+            sid = $(this).children(":selected").attr("id");
+            city = $(this).children(":selected").attr("name");
+            console.log(city);
             $("#City").val('');
-            $("#City").val(option)
+            $("#City").val(city)
+        });
+        console.log($("#about").val());
+        var about = $("#about").val();
+        var sdata = { Id: sid ,Name: option, City: city, About: about }
+        
+        $("#add").click(function () {
+            console.log("DATA" + JSON.stringify(sdata));
+            //$.post("/Student/Edit/" + sid, data, function (response) {
+            //    console.log(response.About)
+            //});
+            $.ajax({
+                url: "/Student/Edit/" + sid,
+                type: 'POST',
+                data : sdata,
+                success: function(data) {
+                    console.log(data);
+                }
+            });
         });
     });
 </script>

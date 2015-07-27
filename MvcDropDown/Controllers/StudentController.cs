@@ -83,16 +83,13 @@ namespace MvcDropDown.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,City,About")] Student student)
+        public JsonResult Edit(Student student)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(student).State = EntityState.Modified;
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-            return View(student);
+
+            db.Entry(student).State = EntityState.Modified;
+            db.SaveChangesAsync();
+
+            return Json(student, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Student/Delete/5
