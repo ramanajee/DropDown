@@ -1,0 +1,29 @@
+﻿
+@*@model MvcDropDown.Models.Student*@
+<script src="~/Scripts/jquery-2.1.4.js"></script>
+<br />
+<br />
+<br />
+<select id="dropdown">
+</select>
+<input type="text" id="City" />
+<textarea cols="15" rows="5" id="about" placeholder="">
+
+</textarea>
+<script>
+    $(document).ready(function() {
+        $.get("/Student/DropDown/", function (data) {
+            $.each(data, function (index, item) {
+                if (index == 0) {
+                    $("#City").val(item.Name);
+                }
+                $("#dropdown").append("<option>"+ item.Name +"</option>");
+            })
+        });
+        $("#dropdown").change(function () {
+            var option = this.value;
+            $("#City").val('');
+            $("#City").val(option)
+        });
+    });
+</script>
