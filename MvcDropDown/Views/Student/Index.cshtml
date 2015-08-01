@@ -9,7 +9,7 @@
 </select>
 <input type="text" value="" id="City" />
 <textarea cols="15" rows="5" id="about" placeholder="About">
-    <form></form>
+
 </textarea>
 <button id="add">Save</button>
 <script>
@@ -22,8 +22,8 @@
                 if (index == 0) {
                     $("#City").val('');
                 }
-                $("#dropdown").append("<option id=" + item.Id + " name=" + item.City + ">" + item.Name + "</option>");
-            });
+                $("#dropdown").append("<option id="+ item.Id +" name="+ item.City +">"+ item.Name +"</option>");
+            })
         });
         var option;
         var sid;
