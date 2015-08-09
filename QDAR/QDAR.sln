@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QDAR.Models", "QDAR.Models\QDAR.Models.csproj", "{D89306B8-E7FE-4FBB-BD3D-E54892996E19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QDAR.DataModel", "QDAR.DataModel\QDAR.DataModel.csproj", "{DCC959F0-683C-4952-A929-7F6FA9DC4BA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D89306B8-E7FE-4FBB-BD3D-E54892996E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89306B8-E7FE-4FBB-BD3D-E54892996E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89306B8-E7FE-4FBB-BD3D-E54892996E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89306B8-E7FE-4FBB-BD3D-E54892996E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC959F0-683C-4952-A929-7F6FA9DC4BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC959F0-683C-4952-A929-7F6FA9DC4BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC959F0-683C-4952-A929-7F6FA9DC4BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC959F0-683C-4952-A929-7F6FA9DC4BA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
