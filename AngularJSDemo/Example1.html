@@ -1,11 +1,20 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <title>Hello World, AngularJS - ViralPatel.net</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
 </head>
 <body>
 
+    Write some text in textbox:
+    <input type="text" ng-model="sometext" />
+    <h1>Hello {{ sometext }}</h1>
+    <h1 ng-controller="RamCtrl">{{ message }}</h1>
+    <script>
+        function RamCtrl($scope) {
+            $scope.message = "Hello World!";
+        }
+    </script>
 </body>
 </html>
