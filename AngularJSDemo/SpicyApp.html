@@ -8,6 +8,7 @@
     <div ng-controller="SpicyController">
         <button ng-click="chiliSpicy()">Chili</button>
         <button ng-click="jalapenoSpicy()">Jalapeño</button>
+        <button ng-click="alert()">Alert</button>
         <p>The food is {{spice}} spicy!</p>
     </div>
     <script src="/Scripts/angular.js"></script>
@@ -24,6 +25,9 @@
             $scope.jalapenoSpicy = function () {
                 $scope.spice = 'jalapeño';
             };
+            $scope.alert = function() {
+                alert("Hi Ramanajee");
+            }
         }]);
     </script>
 </body>

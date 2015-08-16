@@ -98,6 +98,7 @@
     <Content Include="Example1.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="InheritanceDemo.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -883,6 +884,7 @@
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="SpicyApp.html" />
+    <Content Include="Spicy_Arguments_Demo.html" />
     <Content Include="Web.config" />
     <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
