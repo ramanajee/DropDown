@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html ng-app="Ramanajee">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div ng-controller="RamController">
+        {{ greet }}
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+        var myApp = angular.module('Ramanajee', []);
+        myApp.controller('RamController', ['$scope', function ($scope) {
+            $scope.greet = "Hello";
+        }]);
+    </script>
+</body>
+</html>

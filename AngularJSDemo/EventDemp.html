@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div ng-controller="EventController">
+            {{ event.name }}<br />
+            {{ event.date }}<br />
+            {{ event.time }}
+        </div>
+    </div>
+    <div class="container">
+        <div ng-controller="GreetingController">
+            {{ greeting }}
+        </div>
+    </div>
+    <script src="/Scripts/jquery-1.9.1.js"></script>
+    <script src="/Scripts/underscore.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>-->
+    <script src="/Scripts/angular.min.js"></script>
+    <script>
+        function EventController($scope) {
+            $scope.event = {
+                name: 'Ramanajee',
+                date: '8/15/2015',
+                time:'10:30 AM'
+            }
+        }
+
+        var myApp = angular.module('myApp', []);
+
+        myApp.controller('GreetingController', ['$scope', function ($scope) {
+            $scope.greeting = 'Hola!';
+        }]);
+    </script>
+</body>
+</html>
