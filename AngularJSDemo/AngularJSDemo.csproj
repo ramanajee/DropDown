@@ -883,6 +883,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
+    <Content Include="ServiceDemo.html" />
     <Content Include="SpicyApp.html" />
     <Content Include="Spicy_Arguments_Demo.html" />
     <Content Include="Web.config" />
