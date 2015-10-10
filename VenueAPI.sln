@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VenueAPI", "VenueAPI\VenueAPI.csproj", "{2C1BF811-F2AC-4F4B-BFF4-4152431A75C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VenueWeb", "..\VenueWeb\VenueWeb.csproj", "{41EF4495-744C-42CB-AAB2-1BEF691BD6B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VenueWeb", "VenueWeb\VenueWeb.csproj", "{7DB59FF3-4E4C-4791-8712-D431F8C39324}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2C1BF811-F2AC-4F4B-BFF4-4152431A75C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C1BF811-F2AC-4F4B-BFF4-4152431A75C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C1BF811-F2AC-4F4B-BFF4-4152431A75C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41EF4495-744C-42CB-AAB2-1BEF691BD6B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41EF4495-744C-42CB-AAB2-1BEF691BD6B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41EF4495-744C-42CB-AAB2-1BEF691BD6B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41EF4495-744C-42CB-AAB2-1BEF691BD6B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB59FF3-4E4C-4791-8712-D431F8C39324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB59FF3-4E4C-4791-8712-D431F8C39324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB59FF3-4E4C-4791-8712-D431F8C39324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB59FF3-4E4C-4791-8712-D431F8C39324}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
