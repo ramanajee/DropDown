@@ -14,13 +14,41 @@
 
     <br />
     <br />
-    <script type="text/template" id="events_template">
+    <script type="text/x-handlebars-template" id="events_template">
         <div class="" style="margin-left:20px;">
             <div class="col-md-3 text-center">
                 <div class="panel panel-primary">
                     <div class="panel-heading">{{ date }}</div>
                     <div class="panel-body">
-                       <label>Event Name : </label>  <label class="text-info">{{ name }}</label>
+                        <label>Event Name : </label> <a href="#" class="btn btn-link"> {{ name }}</a>
+                    </div>
+                    <div class="panel-footer">
+                        <label> Start Time : <label class="text-success">{{ startTime }}</label></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="event_details">
+        <div class="" style="margin-left:20px;">
+            <div class="col-md-3 text-center">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{ name }}</div>
+                    <div class="panel-body">
+                        <label class="text-info"> {{ description }}</label><br />
+                        <span class="text-info">
+                            <label class="text-info"> Sessions </label>
+                            {{#each sessions}}
+                            <br />
+                            <label class="label label-primary"> Title : {{ Title }} </label>
+                            <br />
+                            <label class="label label-info"> Description : {{ Description }} </label>
+                            <br />
+                            <label class="label label-info"> Speaker Name : {{ Speaker id}} </label>
+                            {{/each}}
+                        </span>
+                        <label class="text-danger"> {{ Venues.address }} , {{ Venues.street }}</label>
                     </div>
                     <div class="panel-footer">
                         <label> Start Time : <label class="text-success">{{ startTime }}</label></label>
@@ -38,18 +66,22 @@
     <script src="App/Models/EventModel.js"></script>
     <script>
         $(document).ready(function () {
-            var eventView = new EventView();
-            eventView.render();
-            var eventModel = new EventModel();
-            eventModel.fetch({
-                success: function (response) {
-                    var data = response.toJSON();
-                    console.log(data);
-                },
-                error: function (response, status, xhr) {
-                    alert("Error while loading the data");
-                }
-            })
+            var view = new EventView();
+            view.render();
+            view.eventDetails();
+            Handlebars.registerHelper('Speaker', function (speakerId) {
+                var eventModel = new EventModel();
+                eventModel.fetch({
+                    success: function (data) {
+                        var data = data.toJSON();
+                        _.each(data, function (speaker, index) {
+                            if (speaker.speaker[index].id == speakerId) {
+                                return speaker.speaker[index].name;
+                            }
+                        })
+                    }
+                });
+            });
         });
     </script>
 </body>

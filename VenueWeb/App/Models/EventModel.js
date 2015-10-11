@@ -4,6 +4,5 @@
 var EventModel = Backbone.Model.extend({
     urlRoot: "DAL/data.json",
     initialize: function() {
-        console.log("Hello World");
     }
 });
