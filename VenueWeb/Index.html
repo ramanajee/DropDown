@@ -1,10 +1,56 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta charset="utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 
+    <!--{{#each }}
+    <h2><a href="/posts/{{../permalink}}#{{id}}">{{title}}</a></h2>
+    <div>{{body}}</div>
+    {{/each}}-->
+
+    <br />
+    <br />
+    <script type="text/template" id="events_template">
+        <div class="" style="margin-left:20px;">
+            <div class="col-md-3 text-center">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{ date }}</div>
+                    <div class="panel-body">
+                       <label>Event Name : </label>  <label class="text-info">{{ name }}</label>
+                    </div>
+                    <div class="panel-footer">
+                        <label> Start Time : <label class="text-success">{{ startTime }}</label></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script src="Scripts/underscore.js"></script>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/backbone.js"></script>
+    <script src="Scripts/handlebars-v4.0.2.js"></script>
+    <script src="App/Views/EventsView.js"></script>
+    <script src="App/Models/EventModel.js"></script>
+    <script>
+        $(document).ready(function () {
+            var eventView = new EventView();
+            eventView.render();
+            var eventModel = new EventModel();
+            eventModel.fetch({
+                success: function (response) {
+                    var data = response.toJSON();
+                    console.log(data);
+                },
+                error: function (response, status, xhr) {
+                    alert("Error while loading the data");
+                }
+            })
+        });
+    </script>
 </body>
 </html>

@@ -181,6 +181,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\Models\EventModel.js" />
+    <Content Include="App\Views\EventsView.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -238,7 +240,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="DAL\events.json" />
+    <Content Include="DAL\twitter.json" />
+    <Content Include="DAL\data.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\handlebars-v4.0.2.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
@@ -1035,8 +1041,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Collections\" />
-    <Folder Include="App\Models\" />
-    <Folder Include="App\Views\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
