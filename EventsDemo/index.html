@@ -2,9 +2,98 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 
+    <!--{{#each }}
+    <h2><a href="/posts/{{../permalink}}#{{id}}">{{title}}</a></h2>
+    <div>{{body}}</div>
+    {{/each}}-->
+
+    <br />
+    <br />
+    <script type="text/x-handlebars-template" id="events_template">
+        <div class="" style="margin-left:20px;">
+            <div class="col-md-3 text-center">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{ date }}</div>
+                    <div class="panel-body">
+                        <label>Event Name : </label> <a href="#" id="evetnName" class="btn btn-link" data-value="{{ id }}"> {{ name }}</a>
+                    </div>
+                    <div class="panel-footer">
+                        <label> Start Time : <label class="text-success">{{ startTime }}</label></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <div id="resultDiv"></div>
+    <div id="resultDiv2"></div>
+
+    <script type="text/x-handlebars-template" id="event_details">
+        <div class="" style="margin-left:20px;">
+            <div class="col-md-3 text-center">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{ name }}</div>
+                    <div class="panel-body">
+                        <label class="text-info"> {{ description }}</label><br />
+                        <span class="text-info">
+                            <label class="text-info"> Sessions </label>
+                            {{#each sessions}}
+                            <br />
+                            <label class="label label-primary"> Title : {{ Title }} </label>
+                            <br />
+                            <label class="label label-info"> Description : {{ Description }} </label>
+                            <br />
+                            <label class="label label-info"> Speaker Name : {{ Speaker id}} </label>
+                            {{/each}}
+                        </span>
+                        <label class="text-danger"> {{ Venues.address }} , {{ Venues.street }}</label>
+                    </div>
+                    <div class="panel-footer">
+                        <label> Start Time : <label class="text-success">{{ startTime }}</label></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script src="Scripts/underscore.js"></script>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/backbone.js"></script>
+    <script src="Scripts/handlebars-v4.0.2.js"></script>
+    <script src="App/models.js"></script>
+    <script src="App/views.js"></script>
+    <script>
+        $(document).ready(function () {
+            Backbone.emulateHTTP = true;
+            Backbone.emulateJSON = true;
+            Backbone.history.start();
+            Handlebars.registerHelper('Speaker', function (speakerId) {
+                var eventModel = new EventModel();
+                eventModel.fetch({
+                    //success: function (data) {
+                    //    var data = data.toJSON();
+                    //    debugger;
+                    //    _.each(data, function (spkr, index) {
+                    //        if (spkr.speaker[index].id == speakerId) {
+                    //            return spkr.speaker[index].name;
+                    //        }
+                    //    })
+                    //}
+                });
+            });
+
+            var count = $("*").length;
+            console.log(count);
+            var view = new EventView();
+            var html = view.render();
+            $("resultDiv2").append(html);
+           // view.eventDetails();
+        });
+    </script>
 </body>
 </html>

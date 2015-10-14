@@ -6,3 +6,7 @@ var EventModel = Backbone.Model.extend({
     initialize: function () {
     }
 });
+
+var EventDetails = Backbone.Model.extend({
+    urlRoot:''
+})
