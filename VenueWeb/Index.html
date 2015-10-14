@@ -30,6 +30,9 @@
         </div>
     </script>
 
+    <div id="resultDiv"></div>
+    <div id="resultDiv2"></div>
+
     <script type="text/x-handlebars-template" id="event_details">
         <div class="" style="margin-left:20px;">
             <div class="col-md-3 text-center">
@@ -66,22 +69,29 @@
     <script src="App/Models/EventModel.js"></script>
     <script>
         $(document).ready(function () {
-            var view = new EventView();
-            view.render();
-            view.eventDetails();
+
             Handlebars.registerHelper('Speaker', function (speakerId) {
                 var eventModel = new EventModel();
                 eventModel.fetch({
-                    success: function (data) {
-                        var data = data.toJSON();
-                        _.each(data, function (speaker, index) {
-                            if (speaker.speaker[index].id == speakerId) {
-                                return speaker.speaker[index].name;
-                            }
-                        })
-                    }
+                    //success: function (data) {
+                    //    var data = data.toJSON();
+                    //    debugger;
+                    //    _.each(data, function (spkr, index) {
+                    //        if (spkr.speaker[index].id == speakerId) {
+                    //            return spkr.speaker[index].name;
+                    //        }
+                    //    })
+                    //}
                 });
             });
+
+            var count = $("*").length;
+            console.log(count);
+            var view = new EventView();
+            var html = view.render();
+            debugger;
+            $("resultDiv2").append(html);
+           // view.eventDetails();
         });
     </script>
 </body>

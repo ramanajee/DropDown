@@ -3,11 +3,15 @@
 /// <reference path="c:\Users\Ram\Documents\Visual Studio 2015\Projects\VenueWeb\Scripts/handlebars-v4.0.2.js" />
 
 var EventView = Backbone.View.extend({
-    el: 'body',
+    el: '#resultDiv',
     initialize: function () {
 
     },
     render: function () {
+
+
+       
+
         var source = $("#events_template").html();
         var template = Handlebars.compile(source);
         var eventModel = new EventModel();
@@ -18,9 +22,9 @@ var EventView = Backbone.View.extend({
                 _.each(data, function (event, index) {
                     var html = template(event);
                     self.$el.append(html)
-                })
+                });
             }
-        })
+        });
         return this;
     },
     eventDetails: function() {
