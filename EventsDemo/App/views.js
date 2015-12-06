@@ -6,7 +6,7 @@ var AppRouter = Backbone.Router.extend({
     }
 });
 
-var appRoute = new AppRouter();
+var appRoute = new AppRouter;
 appRoute.on('route:getpost', function(id) {
     alert(id);
 })

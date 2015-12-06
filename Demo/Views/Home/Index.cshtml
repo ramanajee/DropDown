@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+
+    <select id="dropDown">
+        <option>--SELECT--</option>
+    </select>
+    <div class="btn btn-primary" id="btnTest"> Test </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/underscore.js"></script>
+<script src="~/Scripts/backbone.js"></script>
+<script>
+    $(document).ready(function () {
+        CountryModel = Backbone.Model.extend({
+            url: '/DAL/data.json'
+        });
+        CountryCollection = Backbone.Collection.extend({
+            url: '/DAL/data.json'
+        });
+        CountryView = Backbone.View.extend({
+            el: '.row',
+            initialize: function () {
+                this.model = new CountryModel();
+                this.collection = new CountryCollection();
+                this.data = '';
+                var self = this;
+                this.collection.fetch({
+                    'success': function (data) {
+                        self.data = data.toJSON();
+                        _.each(data.toJSON(), function (item) {
+                            $('#dropDown').append('<option value='+ item.Id +'>' + item.Name + '</option>');
+                        });
+                    }
+                });
+            },
+            events: {
+                'click #btnTest': 'TestFunction',
+                'change #dropDown': 'ChangeEvent'
+            },
+            ChangeEvent: function (e) {
+                var id = e.target.value;
+            },
+            TestFunction: function () {
+                alert('Button Clicked....');
+            }
+
+        });
+        new CountryView();
+    });
+</script>
